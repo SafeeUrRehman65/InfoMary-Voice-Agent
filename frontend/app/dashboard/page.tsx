@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -392,9 +392,8 @@ export default function Dashboard() {
                     </td>
                   </tr>
                 ) : filtered.map((lead, idx) => (
-                  <>
+                  <React.Fragment key={lead.lead_id}>
                     <motion.tr
-                      key={lead.lead_id}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: idx * 0.03 }}
@@ -486,7 +485,7 @@ export default function Dashboard() {
                         </motion.tr>
                       )}
                     </AnimatePresence>
-                  </>
+                  </React.Fragment>
                 ))}
               </tbody>
             </table>

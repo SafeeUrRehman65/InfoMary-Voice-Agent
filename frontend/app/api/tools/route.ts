@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
-  const backendUrl = process.env.BACKEND_URL ?? "http://localhost:8000"
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:8000"
 
   try {
     const res = await fetch(`${backendUrl}/voice-tools`, {

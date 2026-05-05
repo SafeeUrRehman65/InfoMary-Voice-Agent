@@ -12,7 +12,7 @@ function useResponsiveStyles() {
         // Mobile
         setStyle({ width: "80%", height: "70vh" });
       } else if (width < 1024) {
-        // Tablet
+        // Tableth
         setStyle({ width: "90%", height: "60vh" });
       } else {
         // Desktop
